@@ -16,14 +16,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         EditText editTextLine = findViewById(R.id.editText_line);
-        EditText editTextSpace = findViewById(R.id.editText_space);
-        Button button = findViewById(R.id.button);
-
+        // 指定分隔符为横线，或者你传入的字符
         PhoneTextWatcher phoneTextWatcherLine = new PhoneTextWatcher(AsYouTypeFormatter.SEPARATOR_LINE);
         editTextLine.addTextChangedListener(phoneTextWatcherLine);
 
-        PhoneTextWatcher phoneTextWatcherSpace = new PhoneTextWatcher(AsYouTypeFormatter.SEPARATOR_SPACE);
+        EditText editTextSpace = findViewById(R.id.editText_space);
+        // 缺省分隔符为空格
+        PhoneTextWatcher phoneTextWatcherSpace = new PhoneTextWatcher();
         editTextSpace.addTextChangedListener(phoneTextWatcherSpace);
+
+
+        Button button = findViewById(R.id.button);
 
         button.setOnClickListener(v -> {
             editTextLine.setText("");
