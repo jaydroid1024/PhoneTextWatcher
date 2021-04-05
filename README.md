@@ -61,6 +61,7 @@ editTextSpace.addTextChangedListener(phoneTextWatcherSpace);
 
 - Change to  SupperTextWatcher to handle `bank card  number` 、 `id card number` 
 - Support various formats of mobile phone number formatting input
+- Delete the separator and the previous number at the same time 
 
 
 
