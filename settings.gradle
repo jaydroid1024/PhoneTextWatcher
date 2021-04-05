@@ -1,0 +1,3 @@
+include ':phone-text-watcher'
+include ':sample'
+rootProject.name = "PhoneTextWatcher"
