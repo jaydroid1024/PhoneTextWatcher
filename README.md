@@ -51,6 +51,17 @@ editTextSpace.addTextChangedListener(phoneTextWatcherSpace);
 
 
 
+## How to work
+
+//todo
+
+
+
+## Todo list
+
+- Change to  SupperTextWatcher to handle `bank card  number` 、 `id card number` 
+- Support various formats of mobile phone number formatting input
+
 
 
 ## Thanks
