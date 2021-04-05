@@ -1,7 +1,7 @@
 # PhoneTextWatcher
 手机号格式化监听器，支持普通输入/删除，中间输入/删除，在任意位置下黏贴/剪贴多个数字等多种交互场景。
 
-
+目前支持的手机号格式为 `3-4-4`  分隔符可以自定义
 
 ## Preview
 
@@ -18,20 +18,19 @@
 Add it in your root build.gradle at the end of repositories:
 
 ```css
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 
 **Step 2.** Add the dependency
 
 ```groovy
-	dependencies {
-	    implementation 'com.github.jaydroid1024:phone-text-watcher:0.0.1'
-	}
+dependencies {
+    implementation 'com.github.jaydroid1024:PhoneTextWatcher:0.0.1'
+}
 ```
 
 
