@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-
         val editTextLine = findViewById<EditText>(R.id.editText_line)
         val textViewLine = findViewById<TextView>(R.id.textView_line)
         // 指定分隔符为横线，或者你传入的字符
@@ -40,3 +39,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
