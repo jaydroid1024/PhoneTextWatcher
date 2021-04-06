@@ -23,4 +23,5 @@ class PhoneNumberUtils {
     public static AsYouTypeFormatter getAsYouTypeFormatter() {
         return new AsYouTypeFormatter();
     }
+
 }

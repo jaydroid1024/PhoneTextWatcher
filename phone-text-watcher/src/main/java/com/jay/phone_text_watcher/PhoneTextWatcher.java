@@ -5,10 +5,12 @@ import android.text.Selection;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 
+import java.util.regex.Pattern;
+
 
 /**
- * 手机号格式化监听
- * 支持多种交互场景的:包括普通输入/删除，中间输入/删除，在任意位置下黏贴/删除多个字符串。
+ * https://github.com/jaydroid1024/PhoneTextWatcher
+ * 手机号3-4-4格式化输入监听器，支持自定义分隔符，支持末端输入/删除，中间输入/删除，任意位置黏贴/剪贴多个数字等多种交互场景
  *
  * @author jaydroid
  * @version 1.0
@@ -24,6 +26,8 @@ public class PhoneTextWatcher implements TextWatcher {
     private boolean mSelfChange = false;
     //表示格式化已停止。
     private boolean mStopFormatting;
+
+    private TextChangeCallback textChangeCallback;
 
     public PhoneTextWatcher() {
         this(AsYouTypeFormatter.SEPARATOR_SPACE);
@@ -115,12 +119,32 @@ public class PhoneTextWatcher implements TextWatcher {
             e.printStackTrace();
         }
 
+        if (textChangeCallback != null) {
+            String unformatted = unformatted(s);
+            textChangeCallback.afterTextChanged(unformatted, checkMobile(unformatted));
+        }
+    }
+
+    /**
+     * 反格式化
+     */
+    public String unformatted(CharSequence s) {
+        String separator = String.valueOf(mFormatter.getSeparator());
+        return s.toString().replace(separator, "");
+    }
+
+    /**
+     * 去除分隔符后11位手机号检验
+     */
+    public boolean checkMobile(String mobile) {
+        String regex = "\\d{11}";
+        return Pattern.matches(regex, mobile);
     }
 
     /**
      * 格式化。
      */
-    private String format(CharSequence s) {
+    public String format(CharSequence s) {
         String internationalFormatted = "";
         mFormatter.clear();
         char lastNonSeparator = 0;
@@ -165,4 +189,10 @@ public class PhoneTextWatcher implements TextWatcher {
         }
         return false;
     }
+
+    public void setTextChangedCallback(TextChangeCallback callback) {
+        textChangeCallback = callback;
+    }
+
+
 }

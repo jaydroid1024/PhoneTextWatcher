@@ -22,6 +22,17 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView_space"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="反格式化后的手机号："
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_space" />
+
 
     <EditText
         android:id="@+id/editText_line"
@@ -36,20 +47,20 @@
         android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_space" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_space" />
 
-    <Button
-        android:id="@+id/button"
+
+    <TextView
+        android:id="@+id/textView_line"
         android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
-        android:text="清除"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="反格式化后的手机号："
+        android:textColor="@color/purple_500"
+        android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_line" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

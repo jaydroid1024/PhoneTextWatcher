@@ -18,7 +18,17 @@ public class AsYouTypeFormatter {
     public static char SEPARATOR_SPACE = ' ';
 
     private final StringBuilder accruedInput = new StringBuilder();
+
     private char separator = SEPARATOR_SPACE;
+
+    /**
+     * 获取格式化分隔符，默认为空格
+     *
+     * @return
+     */
+    public char getSeparator() {
+        return separator;
+    }
 
     /**
      * 设置格式化分隔符，默认为空格
